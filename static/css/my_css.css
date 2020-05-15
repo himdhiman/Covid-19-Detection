@@ -1,0 +1,16 @@
+#vantajs {
+    width: auto;
+    height: 700px;
+    margin-top: -150px;
+    margin-left: -150px;
+}
+
+#heading {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#site_text {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}

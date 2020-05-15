@@ -1,0 +1,189 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Covid - 19</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href='{% static "css/materialize.css" %}' type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" href='{% static "css/my_css.css" %}'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='{% static "css/style.css" %}' type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <div id = "vantajs"></div>
+
+
+  <div class="container">
+    <div class="section">
+    
+      <h3 id = 'heading'>Covid-19 Detection WebApp</h3>
+
+      <div class="row">
+
+        <div class="col s12 m4">
+          <dixv class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">timeline</i></h2>
+            <h5 class="center">Total Cases</h5>
+
+            <p class="center" id = "TC">{{ total_cases }}</p>
+          </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Recovered Cases</h5>
+
+            <p class="center" id = "TR">{{ total_recovered }}</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">phealing</i></h2>
+            <h5 class="center">Faltal Cases</h5>
+
+            <p class="center" id = "TD">{{ total_deaths }}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 dark">Covid-19 Detection Using Chest X-Rays</h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src='{% static "img/background2.jpeg" %}' alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h4><i class="mdi-content-send brown-text">Covid-19 Prediction</i></h4>
+          <p class="center-align light">A CNN based Neural network is trained which take x-ray images to predict
+            the patient as corona virus positive or negative.
+          </p>
+          <form id = "img_form" method = 'POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="waves-effect waves-light btn modal-trigger" href="#modal1" type="submit">Predict
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+          
+          <p id = 'result' style="font-size: x-large;"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src='{% static "img/background1.jpg" %}' alt="Unsplashed background img 3"></div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+            <b><p class="center-align light" id = "site_text"> In this time of the global pandemic, I erge everyone to stay inside their home so as to protect themselves and other also. This is a time of great danger and we all can help each other by helping ourselves only.</p></b>
+            <b><p class="center-align light" id = "site_text"> This site is made with the purpose of spreading info about covid-19 and to establish a model that predict whether a person is affected with covid-19.</p></b>
+            <b><p class="center-align light" id = "site_text">We all know that greatness in a disruptive era requires bold ambition,curious talent and a culture that believes that we are smarter together.</p></b>
+            <b><p class="center-align light" id = "site_text">I approach every challenge holistically, with best-in-class expertise in data, creativity, media, technology, search, social and more. It is then called Alchemy. It has the power to build my clients' brands and transform their business. And while it may seem like magic, I've got it down to a science.</p></b>
+        
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src='{% static "img/background6.jpg" %}' alt="Unsplashed background img 3"></div>
+  </div>
+
+
+
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text">About the Model</i></h3>
+          <p class="center-align light" id = "site_text">The model is an instance of deep Convolutional Neural Network(CNN). For more detail about the architecture visit my github repository, links in the below section.
+          </p>
+          <p class="center-align light" id = "site_text">It has an accuracy of about 97% on the train and test datasets.
+          </p>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+  <footer class="page-footer indigo lighten-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Himanshu Dhiman</h5>
+          <p class="grey-text text-lighten-4">Netaji Subhas University of Technology</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <i class="fa fa-github" style="font-size:36px"></i>
+          <ul>
+            <li><a class="white-text" href="#!">Github</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <i class="fa fa-linkedin" style="font-size:36px"></i>
+          <ul>
+            <li><a class="white-text" href="#!">LinkdIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="https://github.com/himdhiman">Himanshu Dhiman</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+  <script src='{% static "js/three.r95.min.js" %}'></script>
+  <script src='{% static "js/vanta.dots.min.js" %}'></script>
+  <script language="JavaScript" type="text/javascript" src='{% static "js/my_js.js" %}'></script>
+  <script src='{% static "js/materialize.js" %}'></script>
+  <script src='{% static "js/init.js" %}'></script>
+  <script> 
+    VANTA.DOTS('#vantajs')
+  </script>
+
+</body>
+</html>
