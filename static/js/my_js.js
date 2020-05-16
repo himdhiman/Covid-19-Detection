@@ -13,6 +13,7 @@ VANTA.DOTS({
 $(document).on('submit', "#img_form" , function(e){
     e.preventDefault();
     var data = new FormData($('form').get(0));
+    $(".loader").css("display", "block");
     $.ajax({
         url: "",
         type : "POST",
@@ -22,6 +23,7 @@ $(document).on('submit', "#img_form" , function(e){
         processData: false,
         success : function(json){
             console.log(json);
+            $(".loader").css("display", "none");
             document.getElementById("result").innerHTML = json.result;
         },
         failure : function(data){
