@@ -24,6 +24,8 @@ $(document).on('submit', "#img_form" , function(e){
         success : function(json){
             console.log(json);
             $(".loader").css("display", "none");
+            $("#add_img").append('<img src="heatmap.jpg" id = "image"></img>')
+            $("#image").css("display", "inline-block");
             document.getElementById("result").innerHTML = json.result;
         },
         failure : function(data){
