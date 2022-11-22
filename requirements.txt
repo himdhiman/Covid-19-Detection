@@ -15,7 +15,7 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 Markdown==3.2.2
 numpy==1.18.4
-Pillow==7.1.2
+Pillow==9.3.0
 protobuf==3.11.3
 pytz==2020.1
 PyYAML==5.3.1
